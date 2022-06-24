@@ -22,7 +22,7 @@ header span {
 }
 
 header {
-  background-color: #004a85;
+  background-color: #02355f;
   height: 15%;
   font-size: 1.3rem;
   padding-left: 2rem;
