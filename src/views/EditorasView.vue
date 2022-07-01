@@ -3,44 +3,44 @@ import {v4 as uuidv4} from "uuid";
 export default {
   data() {
     return {
-      estadios: [
+      editoras: [
         {
           id: "7332e932-7bc7-47e2-99d0-a2c9dc7b4d31",
-          nome: "TD Garden",
-          time: "Boston Celtics",
+          nome: "1984",
+          editoras: "Antofágica",
         },
         {
           id: "72674295-4b5d-4668-8abc-c968a307c9fc",
-          nome: "Staples Center",
-          time: "Los Angeles Clippers",
+          nome: "O avesso da pele",
+          editoras: "Companhia das Letras",
         },
         {
           id: "64fe1b8c-12cb-4d94-9233-a56167aab6a7",
-          nome: "Moda Center",
-          time: "Portland Trailblazers",
+          nome: "1984",
+          editoras: "Excelsior",
         },
         {
           id: "e33d09ba-8db8-4dd1-be14-0cea1ad9ac59",
-          nome: "Pepsi Center",
-          time: "Denver Nuggets",
+          nome: "1984",
+          editoras: "Tricaju",
         },
         {
           id: "7abaf6ba-6a70-4838-81d6-9d4eb40c0d34",
-          nome: "Target Center",
-          time: "Minnesota Timberwolves",
+          nome: "1984",
+          editoras: "Principis",
         },
       ],
-      novo_estadio: "",
+      novo_editoras: "",
       novo_nome: "esse",
     };
   },
   methods: {
     salvar (){
       const novo_id = uuidv4();
-      this.estadios.push({
+      this.editoras.push({
         id: novo_id,
-        nome: this.novo_estadio,
-        time: this.novo_nome,
+        nome: this.novo_editoras,
+        editoras: this.novo_nome,
       }
       ) 
     }
@@ -52,27 +52,27 @@ export default {
   <main>
     <div class="container">
       <div class="title">
-        <h2>Gerenciamento de Estádios</h2>
+        <h2>Gerenciamento de editoras</h2>
       </div>
       <div class="form-input">
-        <input type="text" v-model="novo_estadio" />
+        <input type="text" v-model="novo_editoras" />
         <button @click="salvar" >Salvar</button>
       </div>
-      <div class="list-estadio">
+      <div class="list-editoras">
         <table>
           <thead>
             <tr>
               <th>ID</th>
-              <th>Nome</th>
+              <th>Livro</th>
+              <th>Editoras</th>
               <th>Ações</th>
-              <th>Times</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="estadio in estadios" :key="estadio.id">
-              <td>{{ estadio.id }}</td>
-              <td>{{ estadio.nome }}</td>
-              <td>{{ estadio.time }}</td>
+            <tr v-for="editoras in editoras" :key="editoras.id">
+              <td>{{ editoras.id }}</td>
+              <td>{{ editoras.nome }}</td>
+              <td>{{ editoras.editoras }}</td>
               <td>??</td>
             </tr>
           </tbody>
@@ -115,12 +115,12 @@ export default {
   cursor: pointer;
 }
 
-.list-estadio {
+.list-editoras {
   display: flex;
   justify-content: center;
 }
 
-.list-estadio table {
+.list-editoras table {
   width: 80%;
   margin: 0 auto;
   border-collapse: collapse;
